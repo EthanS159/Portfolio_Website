@@ -1,0 +1,84 @@
+html{
+    width:100%; height:100%;
+}
+
+body{
+    background-color:#012a39;
+    height:100%;
+    margin:0;
+}
+.icon{
+    margin-inline:0.5rem;
+    width:38px; height:38px;
+}
+
+.icon:hover{
+    cursor:pointer;
+}
+
+.nav{
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    background-color:transparent;
+    height:10%;
+}
+
+.nav-button{
+    padding:0px 17px;
+    border:none;
+    font-size:20px;
+    background-color:transparent;
+}
+
+.nav-button a{
+    color:white;
+    text-decoration:none;
+}
+
+.nav-button:hover{
+    border:2px solid #48cae4;
+}
+
+.container{
+    height:80%;
+}
+
+.home-container{
+    display:flex;
+    justify-content: center;
+    align-items:center;
+    height:100%;
+}
+
+.introHeading{
+    text-align: center;
+    font-size:44px;
+}
+
+.contactPage-container{
+    width:550px; 
+    margin:1rem auto;
+    background-color: aliceblue;
+    padding:1rem 2.5rem;
+}
+
+.inputArea{
+    margin-block:1rem;
+}
+
+.inputBox{
+    width:100%; height:35px;
+}
+
+.submitButton{
+    font-size:17px;
+}
+
+.footer{
+    padding-inline:1rem;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+    height:10%;
+}
