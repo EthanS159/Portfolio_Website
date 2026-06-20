@@ -7,32 +7,31 @@ export default function ContactMePage(){
         lastName:"",
         email:"",
         message:""
+    });
+
+    function sendFormRequest(e){
+    e.preventDefault();
+    
+    fetch("http://localhost:5000/contact", {
+        method:"POST",
+        headers: {
+        "Content-Type": "application/json"
+        },
+        body: JSON.stringify(formData)
     })
-
-    function submission(e){
-        e.preventDefault();
-
-        
-        fetch("http://localhost:5000/contact", {
-            method:"POST",
-            headers: {
-            "Content-Type": "application/json"
-            },
-            body: JSON.stringify(formData)
-        })
-        .then(response => response.text())
-        .then(data => {
-            console.log("Backend response:", data);
-        })
-        .catch(error => {
-            console.error("Fetch error:", error);
-        });
+    .then(response => response.text())
+    .then(data => {
+        alert(data);
+    })
+    .catch(error => {
+        console.error("Fetch error:", error);
+    });
     }
     
     return(
         <>
         <div className = "contactPage-container">
-            <form id = "contactForm" onSubmit={submission}>
+            <form id = "contactForm" onSubmit={sendFormRequest}>
 
                 <div className = "inputArea">
                     <label>FIRST NAME:</label><br/>
