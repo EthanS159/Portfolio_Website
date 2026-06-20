@@ -30,7 +30,7 @@ export let navRouting = [
 
 export default function Navigation() {
   return(
-      <nav class="nav">
+      <nav className = "nav">
         {navRouting.map((navLink) => {
           return(
             <NavLink
