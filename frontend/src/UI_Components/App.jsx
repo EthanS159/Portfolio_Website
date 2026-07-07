@@ -1,12 +1,10 @@
-import Footer from './Footer.jsx'
-import Container from './Container.jsx'
-import Navigation from './Navigation.jsx'
-import { useEffect } from "react";
+import Footer from './Format_Components/Footer.jsx'
+import Container from './Format_Components/Container.jsx'
+import Navigation from './Format_Components/Navigation.jsx'
 
 export default function App() {
   return (
     <>
-      {/* <h1>Hello React</h1> */}
       <Navigation/>
       <Container/>
       <Footer/>

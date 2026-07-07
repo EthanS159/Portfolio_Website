@@ -1,9 +1,9 @@
-import NavLink from './NavLink.jsx'
-import HomePage from './HomePage.jsx'
-import AboutMePage from './AboutMePage.jsx'
-import PortfolioPage from './PortfolioPage.jsx'
-import ContactMePage from './ContactMePage.jsx'
+import HomePage from '../Pages/HomePage.jsx'
+import AboutMePage from '../Pages/AboutMePage.jsx'
+import PortfolioPage from '../Pages/PortfolioPage.jsx'
+import ContactMePage from '../Pages/ContactMePage.jsx'
 import Container from './Container.jsx'
+import NavLink from './NavLink.jsx'
 
 export let navRouting = [
   {
