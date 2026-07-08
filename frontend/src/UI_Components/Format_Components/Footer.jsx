@@ -40,7 +40,13 @@ export default function Footer(){
             <div className="socialIcons">
                 {socials.map((social) => {
                     return(
-                        <a href = {social.link} target = "_blank"> <img src={social.icon} className = "icon" alt = {social.name}/> </a>
+                        <a
+                        key = {social.name}
+                        href = {social.link} 
+                        target = "_blank"
+                        > 
+                        <img src={social.icon} className = "icon" alt = {social.name}/> 
+                        </a>
                     );
                 })}
             </div>

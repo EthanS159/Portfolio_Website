@@ -34,7 +34,8 @@ export default function Navigation() {
         {navRouting.map((navLink) => {
           return(
             <NavLink
-            isActiveTab = {window.location.pathname == navLink.route ? true : false}
+            key = {navLink.route}
+            isactivetab = {window.location.pathname == navLink.route ? true : false}
             route = {navLink.route}
             content = {navLink.title}
             />
