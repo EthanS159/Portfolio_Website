@@ -1,6 +1,7 @@
 import { useState } from "react";
 import Form from "../Format_Components/Form";
 import InputArea from "../Format_Components/InputArea";
+import Button from "../Format_Components/Button";
 
 export default function ContactMePage(){
 
@@ -69,33 +70,45 @@ export default function ContactMePage(){
 
     return(
         <div className = "contactPage-container">
-            <Form 
-            formId = "contactForm" 
-            formRequest = {sendFormRequest} 
-            content = {
-                formInputContent.map((input) => {
-                    return(
-                        <InputArea 
-                        key = {input.id}
-                        labelText = {input.label} 
-                        InputType = {input.type} 
-                        InputClass = {input.className} 
-                        InputId = {input.id}
-                        InputPlaceholder = {input.placeholder} 
-                        InputValue = {formData[input.value]}
-                        onChangeHandler = {(e) => {
-                            const {value} = e.target;
+            <div className = "contactPage-header">
+                <h1>CONTACT ME</h1>
+            </div>
+            <div className = "contactPage-form">
+                <Form 
+                formId = "contactForm" 
+                formRequest = {sendFormRequest} 
+                content = {
+                    formInputContent.map((input) => {
+                        return(
+                            <InputArea 
+                            key = {input.id}
+                            labelText = {input.label} 
+                            InputType = {input.type} 
+                            InputClass = {input.className} 
+                            InputId = {input.id}
+                            InputPlaceholder = {input.placeholder} 
+                            InputValue = {formData[input.value]}
+                            onChangeHandler = {(e) => {
+                                const {value} = e.target;
 
-                            setFormData(prevFormData => ({
-                                ...prevFormData,
-                                [input.value]: value
-                            }))
-                        }}
-                        />
-                    );
-                })
-            }
-            />
+                                setFormData(prevFormData => ({
+                                    ...prevFormData,
+                                    [input.value]: value
+                                }))
+                            }}
+                            />
+                        );
+                    })
+                }
+                button = {
+                    <Button
+                    buttonText = "Submit"
+                    buttonType = "submit"
+                    buttonClass = "submitButton"
+                    />
+                }
+                />
+            </div>
         </div>
     );
 }

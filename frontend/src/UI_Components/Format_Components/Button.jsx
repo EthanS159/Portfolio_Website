@@ -1,8 +1,8 @@
-export default function Button({buttonText, buttonType, buttonClass, buttonId}){
+export default function Button({buttonText, buttonType, buttonClass, buttonId, route}){
     return(
         <>
         <button type = {buttonType} className = {buttonClass} id = {buttonId}>
-            {buttonText}
+            <a href={route}>{buttonText}</a>
         </button>
         </>
     );

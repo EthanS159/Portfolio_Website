@@ -8,7 +8,6 @@ export default function InputArea({labelText, InputType, InputClass, InputId, In
             <br/>
             <input type = {InputType}className = {InputClass} id = {InputId} placeholder = {InputPlaceholder} onChange = {onChangeHandler} value = {InputValue || ""} required
             />
-            <br/>
         </div>
     );
 }
