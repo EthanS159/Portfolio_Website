@@ -44,10 +44,15 @@ app.post("/contact", async (req,res) => {
         const data = req.body;
         console.log(data);
 
+        let firstName = data.firstName.trim();
+        let lastName = data.lastName.trim();
+        let email = data.email.trim();
+        let message = data.message.trim();
+
         const emailVars = {
-            name: data.firstName + " " + data.lastName,
-            email: data.email,
-            message: data.message
+            name: firstName + " " + lastName,
+            email: email,
+            message: message
         }
 
         await emailjs.send("service_jnn56jh", "template_26u0trj", emailVars, {publicKey: process.env.PUBLIC_KEY, privateKey: process.env.PRIVATE_KEY});
