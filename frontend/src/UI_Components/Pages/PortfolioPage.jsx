@@ -3,11 +3,14 @@ export default function PortfolioPage(){
 
     async function fetchGitHubRepos(){
         const response = await fetch("http://localhost:5000/github-repos");
-        console.log(response);
         const data = await response.json();
+
         console.log(data);
     }
-    fetchGitHubRepos();
+    // const setInterval = setInterval(() => {
+    //     console.log("Message displays every 2 seconds");
+    // }, 2000);
+    // fetchGitHubRepos();
 
     return(
         <div className = "portfolio-container">

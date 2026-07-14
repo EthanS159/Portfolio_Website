@@ -8,7 +8,7 @@ import NavLink from './NavLink.jsx'
 export let navRouting = [
   {
     title:"Home",
-    route:"/home",
+    route:"/",
     content: <HomePage/>
   },
   {
