@@ -9,30 +9,24 @@ const app = express();
 app.use(express.json());
 app.use(cors());
 
-app.get("/", (req, res) => {
-    res.send("Backend is running");
-});
-
 app.listen(5000, () => {
-    console.log("Server running on t 5000");
+    console.log("Server running on port 5000");
 });
 
 app.get("/github-repos", async (req, res) => {
     try{
-        console.log("Request came in");
+        console.log("Request for Repos came in");
 
         const response = await fetch("https://api.github.com/users/EthanS159/repos");
-        console.log(response);
-
         const repos = await response.json();
+
         console.log(repos);
 
         res.send(repos);
-
     }
-    catch(error){
-        if (error.name === 'TypeError' && error.message.includes('fetch')) {
-            console.error('Connection blocked or network down:', error);
+    catch(err){
+        if (err.name === 'TypeError' && err.message.includes('fetch')) {
+            console.error('Connection blocked or network down:', err); // work network is blocking API calls
         }    
     }
 })
@@ -42,7 +36,7 @@ app.post("/contact", async (req,res) => {
 
     try{
         const data = req.body;
-        console.log(data);
+        console.log("User provided the following: " + data);
 
         let firstName = data.firstName.trim();
         let lastName = data.lastName.trim();
