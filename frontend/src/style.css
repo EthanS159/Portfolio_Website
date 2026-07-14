@@ -3,7 +3,7 @@ html{
 }
 
 body{
-    background: linear-gradient(178deg,rgba(8, 2, 59, 1) 0%, rgba(31, 0, 204, 1) 120%);
+    background: linear-gradient(178deg,#030014 0%, #19009b 120%);
     height:100%;
     margin:0;
     display:grid;

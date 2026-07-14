@@ -14,10 +14,32 @@ app.get("/", (req, res) => {
 });
 
 app.listen(5000, () => {
-    console.log("Server running on port 5000");
+    console.log("Server running on t 5000");
 });
 
+app.get("/github-repos", async (req, res) => {
+    try{
+        console.log("Request came in");
+
+        const response = await fetch("https://api.github.com/users/EthanS159/repos");
+        console.log(response);
+
+        const repos = await response.json();
+        console.log(repos);
+
+        res.send(repos);
+
+    }
+    catch(error){
+        if (error.name === 'TypeError' && error.message.includes('fetch')) {
+            console.error('Connection blocked or network down:', error);
+        }    
+    }
+})
+
 app.post("/contact", async (req,res) => {
+    console.log("Request came in for contact form");
+
     try{
         const data = req.body;
         console.log(data);

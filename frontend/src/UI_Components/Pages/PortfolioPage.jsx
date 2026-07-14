@@ -1,4 +1,14 @@
 export default function PortfolioPage(){
+
+
+    async function fetchGitHubRepos(){
+        const response = await fetch("http://localhost:5000/github-repos");
+        console.log(response);
+        const data = await response.json();
+        console.log(data);
+    }
+    fetchGitHubRepos();
+
     return(
         <div className = "portfolio-container">
                 <div className = "card project-card">
