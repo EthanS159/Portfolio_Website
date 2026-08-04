@@ -11,7 +11,7 @@ export default function ContactMePage(){
             type: "text",
             class: "inputBox",
             id: "userFirstName",
-            placeholder: "Enter Name Here",
+            placeholder: "Jerry",
             value: "firstName"
         },
         {
@@ -19,7 +19,7 @@ export default function ContactMePage(){
             type: "text",
             class: "inputBox",
             id: "userLastName",
-            placeholder: "Enter Name Here",
+            placeholder: "Fitz",
             value: "lastName"
         },
         {
@@ -27,8 +27,24 @@ export default function ContactMePage(){
             type: "email",
             class: "inputBox",
             id: "userEmail",
-            placeholder: "Enter Email Here",
+            placeholder: "jerry@email.com",
             value: "email"
+        },        
+        {
+            label: "PHONE:",
+            type: "text",
+            class: "inputBox",
+            id: "userPhone",
+            placeholder: "+1 (555) 555-5555",
+            value: "phone"
+        },
+        {
+            label: "SUBJECT:",
+            type: "text",
+            class: "inputBox",
+            id: "userSubject",
+            placeholder: "What is this about?",
+            value: "subject"
         },
         {
             label: "MESSAGE:",
@@ -44,6 +60,8 @@ export default function ContactMePage(){
         firstName:"",
         lastName:"",
         email:"",
+        phone:"",
+        subject: "",
         message:""
     });
 

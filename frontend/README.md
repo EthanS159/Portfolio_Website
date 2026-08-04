@@ -1,16 +1,40 @@
-# React + Vite
+HOME PAGE:
+    - User is greeted by welcome message
+    - User see's options to check out portfolio & to contact me
+    - Have some background affect/animations to fill up blank space
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+ABOUT ME PAGE:
+    - User's see landmarkings of my the reading as a side menu
+    - User see's a very long story of my journey
+        * Story of me getting into tech
+        * In depth internship experiences
+        * Learning about me as a person and my hobbies
+        *BONUS* Trivia based on my story
 
-Currently, two official plugins are available:
+PORTFOLIO PAGE:
+    - Users see's filters for my portfolio:
+        * Sort by Date
+        * Search bar
+        * Sort by Latest or Oldest
+        * Sort by Web Projects or Graphical Design Projects
+    - Users see the applied filters as tags underneath the filter menu
+    - Users see projects in filtered order
+        * Project name
+        * Full Project Name
+        * Project URL
+        * Project Description
+        * Project Creation Date
+        * Last Project Update
+        * Developer Notes
+        * Project Tech Stack/Languages/Tools as Tags
+    - Users see skills based on my experience with them from Proficient, Intermiediate, Beginner
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
-
-## React Compiler
-
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
-
-## Expanding the ESLint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+CONTACT ME PAGE:
+    - User is prompted to:
+        * Enter First Name (REQUIRED)
+        * Enter Last Name (REQUIRED)
+        * Enter Phone Number (OPTIONAL)
+        * Enter Email (REQUIRED)
+        * Enter Message (REQUIRED)
+    - User see's side text telling them that they arrived at the Contact Me Page
+    - User see's additional contacting methods through social media or direct email

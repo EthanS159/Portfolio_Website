@@ -21,11 +21,6 @@ export let navRouting = [
     route:"/portfolio",
     content: <PortfolioPage/>
   },
-  {
-    title:"Contact Me",
-    route:"/contact-me",
-    content: <ContactMePage/>
-  } 
 ];
 
 export default function Navigation() {
