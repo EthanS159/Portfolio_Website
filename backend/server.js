@@ -38,17 +38,12 @@ app.post("/contact", async (req,res) => {
         const data = req.body;
         console.log("User provided the following: " + data);
 
-        let firstName = data.firstName.trim();
-        let lastName = data.lastName.trim();
-        let email = data.email.trim();
-        let message = data.message.trim();
-
         const emailVars = {
-            name: data.firstName + " " + data.lastName,
-            email: data.email,
-            phone: data.phone,
-            subject: data.subject,
-            message: data.message
+            name: data.firstName.trim() + " " + data.lastName.trim(),
+            email: data.email.trim(),
+            phone: data.phone.trim(),
+            subject: data.subject.trim(),
+            message: data.message.trim()
         }
 
         await emailjs.send("service_jnn56jh", "template_26u0trj", emailVars, {publicKey: process.env.PUBLIC_KEY, privateKey: process.env.PRIVATE_KEY});

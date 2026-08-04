@@ -1,7 +1,7 @@
-import { useState } from "react";
-import Form from "../Format_Components/Form";
-import InputArea from "../Format_Components/InputArea";
-import Button from "../Format_Components/Button";
+import { useState } from "react"
+import Form from "../Format_Components/Form"
+import InputArea from "../Format_Components/InputArea"
+import {Button} from 'antd'
 
 export default function ContactMePage(){
 
@@ -119,11 +119,7 @@ export default function ContactMePage(){
                     })
                 }
                 button = {
-                    <Button
-                    buttonText = "Submit"
-                    buttonType = "submit"
-                    buttonClass = "submitButton"
-                    />
+                    <button type = "submit" className = "submitButton">SUBMIT</button>
                 }
                 />
             </div>

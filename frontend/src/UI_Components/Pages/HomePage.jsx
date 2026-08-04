@@ -1,7 +1,8 @@
 // import Button from "../Format_Components/Button";
 import download from "../../assets/icons/discord.png";
-import { useState } from 'react'
+import { useState } from "react"
 import { Button, Modal, Drawer, Radio, Space } from 'antd'
+import ContactMePage from "./ContactMePage";
 
 export default function HomePage() {
     const [open, setOpen] = useState(false);
@@ -22,8 +23,7 @@ export default function HomePage() {
                 key={"right"}
                 size={"500"}
             >
-                <p>Drag the edge to resize the drawer</p>
-                <p>Current size: 55px</p>
+                <ContactMePage />
             </Drawer>
         </div>
     );
