@@ -1,9 +1,15 @@
+
+
 html{
     width:100%; height:100%;
 }
 
 body{
     /* background: linear-gradient(178deg,#030014 0%, #19009b 120%); */
+    /* background-image:url("./assets/Background.png"); */
+    background-image:url("./assets/background.jpeg");
+    background-size:cover;
+    background-repeat:no-repeat;
     background-color: #0b0620;
     height:100%;
     margin:0;
@@ -47,7 +53,7 @@ body{
 
 .container{
     /* height:80%; */
-    border:1px solid red;
+    /* border:1px solid red; */
 }
 
 .home-container{
@@ -96,7 +102,7 @@ body{
 
 .inputArea label{
     font-size:20px;
-}padding
+}
 
 .inputBox{
     width:40px; height:55px;
@@ -107,14 +113,12 @@ body{
 }
 
 .portfolio-container{
-    /* height:100%; */
     margin:1rem 6rem;
-    /* display:flex; */
-    /* align-items:center; */
 }
 .card{
-    background-color: black;
-    border:2px solid #48cae4;
+    background-color: rgba(15, 23, 43, 0.7);
+    border-radius: 15px;
+    /* border:2px solid #48cae4; */
     width:100%; height:200px;
 }
 
@@ -123,6 +127,6 @@ body{
     display:flex;
     align-items:center;
     justify-content:space-between;
-    border:1px solid green;
+    /* border:1px solid green; */
     /* height:15%; */
 }
