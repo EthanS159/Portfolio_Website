@@ -7,10 +7,7 @@ export default function PortfolioPage(){
 
         console.log(data);
     }
-    // const setInterval = setInterval(() => {
-    //     console.log("Message displays every 2 seconds");
-    // }, 2000);
-    // fetchGitHubRepos();
+    fetchGitHubRepos();
 
     return(
         <div className = "portfolio-container">

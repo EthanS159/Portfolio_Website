@@ -18,8 +18,9 @@ app.get("/github-repos", async (req, res) => {
         console.log("Request for Repos came in");
 
         const response = await fetch("https://api.github.com/users/EthanS159/repos");
-        const repos = await response.json();
-
+        const data = await response.json();
+        const repos = data.map(({name, id, owner, description, url, language, created_at, updated_at}) => ({name, id, owner, description, url, language, created_at, updated_at}));
+        
         console.log(repos);
 
         res.send(repos);
@@ -36,7 +37,6 @@ app.post("/contact", async (req,res) => {
 
     try{
         const data = req.body;
-        console.log("User provided the following: " + data);
 
         const emailVars = {
             name: data.firstName.trim() + " " + data.lastName.trim(),
@@ -45,6 +45,8 @@ app.post("/contact", async (req,res) => {
             subject: data.subject.trim(),
             message: data.message.trim()
         }
+
+        console.log("User provided the following: " + emailVars);
 
         await emailjs.send("service_jnn56jh", "template_26u0trj", emailVars, {publicKey: process.env.PUBLIC_KEY, privateKey: process.env.PRIVATE_KEY});
         res.send("Data Received and email has been sent");
