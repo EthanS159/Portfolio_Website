@@ -20,6 +20,8 @@ app.get("/github-repos", async (req, res) => {
         const response = await fetch("https://api.github.com/users/EthanS159/repos");
         const data = await response.json();
         const repos = data.map(({name, id, owner, description, url, language, created_at, updated_at}) => ({name, id, owner, description, url, language, created_at, updated_at}));
+
+
         
         console.log(repos);
 
@@ -56,3 +58,26 @@ app.post("/contact", async (req,res) => {
         res.send("Email could not be sent");
     }
 })
+
+const data = [{
+    id:811988,
+    name: "Ethan Sarante",
+    owner: "EthanS159",
+    description: "Test project",
+    url: "https::/apple.com",
+    language: "JavaScript",
+    created_at: "12/8/2025",
+    updated_at: "3/14/2026"
+},
+{
+    id:317872,
+    name: "Ethan Sarante",
+    owner: "EthanS159",
+    description: "Test project 2",
+    url: "https::/pear.com",
+    language: "C++",
+    created_at: "3/8/2026",
+    updated_at: "4/28/2026"
+}]
+
+module.exports = data;
