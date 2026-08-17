@@ -3,7 +3,7 @@ require("dotenv").config();
 const express = require ("express");
 const cors = require ("cors");
 const emailjs = require("@emailjs/nodejs");
-
+const sqlite3 = require('sqlite3').verbose();
 const app = express();
 
 app.use(express.json());
@@ -13,16 +13,55 @@ app.listen(5000, () => {
     console.log("Server running on port 5000");
 });
 
+const database = new sqlite3.Database(`./repos.db`, (err) => {
+    if (err) {
+        console.error('Error opening database:', err.message);
+    }
+    console.log(`Connected to the SQLite database: repos`);
+})
+
+// database.run(`DELETE FROM repositories`, [],  (err) => {
+//     if (err) console.error('Error deleting data', err.message);
+
+//     console.log("Data deleted successfully")
+// });
+
 app.get("/github-repos", async (req, res) => {
     try{
         console.log("Request for Repos came in");
 
         const response = await fetch("https://api.github.com/users/EthanS159/repos");
         const data = await response.json();
-        const repos = data.map(({name, id, owner, description, url, language, created_at, updated_at}) => ({name, id, owner, description, url, language, created_at, updated_at}));
 
+        const repos = await Promise.all(
+            data.map(async ({ id, name, owner, description, html_url,  url, language, created_at, updated_at, default_branch }) => ({
+                name: "Ethan Sarante",
+                id: id,
+                projectName: name,
+                owner: owner.login,
+                projectLink: html_url,
+                apiUrl: url,
+                description: description,
+                primaryLanguage: language,
+                languages: await fetch(`${url}/languages`).then((res) => res.json()),
+                createdAt: created_at,
+                updatedAt: updated_at,
+                defaultBranch: default_branch
+            }))
+        );
 
-        
+        // repos.forEach((repo) => {
+        //     database.run(`INSERT INTO repositories(id, name, owner, description, url, language, created_at, updated_at) VALUES(?, ?, ?, ?, ?, ?, ?, ?)`, Object.values(repo))
+        // })
+
+        // database.all(`SELECT * FROM repositories`, [], (err, rows) => {
+        //     if (err) {
+        //         console.error('Error retrieving data:', err.message);
+        //         rej(err);
+        //     }
+        //     rows.forEach((row) => console.log(row));
+        // });
+
         console.log(repos);
 
         res.send(repos);
@@ -58,26 +97,3 @@ app.post("/contact", async (req,res) => {
         res.send("Email could not be sent");
     }
 })
-
-const data = [{
-    id:811988,
-    name: "Ethan Sarante",
-    owner: "EthanS159",
-    description: "Test project",
-    url: "https::/apple.com",
-    language: "JavaScript",
-    created_at: "12/8/2025",
-    updated_at: "3/14/2026"
-},
-{
-    id:317872,
-    name: "Ethan Sarante",
-    owner: "EthanS159",
-    description: "Test project 2",
-    url: "https::/pear.com",
-    language: "C++",
-    created_at: "3/8/2026",
-    updated_at: "4/28/2026"
-}]
-
-module.exports = data;
